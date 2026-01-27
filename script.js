@@ -4,7 +4,7 @@ const input = document.getElementById("textInput");
 const bamboo = document.querySelector(".bamboo-input");
 
 input.addEventListener("keydown", (e) => {
-  if (e.key !== "Enter") return;
+  if (e.key !== "Enter") appearText();
 
   if (input.value.trim() === "") return;
 
