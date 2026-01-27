@@ -11,7 +11,6 @@ function createFloatingText(text) {
   const el = document.createElement("div");
   el.className = "floating-text";
   el.textContent = text;
-
   document.body.appendChild(el);
 
   setTimeout(() => {
