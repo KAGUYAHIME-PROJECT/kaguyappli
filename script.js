@@ -8,7 +8,7 @@ input.addEventListener("keydown", (e) => {
 
   if (input.value.trim() === "") return;
 
-  // ここから「確定処理」
+ 
   bamboo.classList.add("fade-out");
 
   const text = document.createElement("div");
@@ -17,7 +17,7 @@ input.addEventListener("keydown", (e) => {
 
   document.body.appendChild(text);
 
-  // 竹が消えた後に input を無効化
+ 
   setTimeout(() => {
     bamboo.style.display = "none";
   }, 1200);
