@@ -17,7 +17,7 @@ body {
 
 /* 月光 */
 .moonlight {
-  position: fixed;
+  z-index: 1;
   inset: 0;
   background: radial-gradient(
     circle at 70% 20%,
@@ -25,6 +25,11 @@ body {
     rgba(0,0,0,0.85) 60%
   );
   pointer-events: none;
+}
+
+.scene {
+  position: relative;
+  z-index: 2;
 }
 
 /* 中央シーン */
@@ -62,8 +67,8 @@ body {
 }
 
 /* 浮かぶ文字 */
-.floating-text {
-  position: absolute;
+.scene {
+  position: relative;
   left: 50%;
   bottom: 170px;
   transform: translateX(-50%);
