@@ -3,6 +3,19 @@ console.log("KAGUYAHIME 起動");
 const input = document.getElementById("textInput");
 const bamboo = document.querySelector(".bamboo-input");
 
+let typing = false;
+
+const input = document.getElementById("textInput");
+
+input.addEventListener("focus", () => {
+  typing = true;
+});
+
+input.addEventListener("blur", () => {
+  typing = false;
+});
+
+
 input.addEventListener("keydown", (e) => {
   if (e.key !== "Enter") appearText();
 
