@@ -1,9 +1,18 @@
-body {
+html, body {
   margin: 0;
-  height: 100vh;
-  background: url("../img/bamboo.jpg") center / cover no-repeat;
+  padding: 0;
+  height: 100%;
   overflow: hidden;
-  font-family: "serif";
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* 竹林背景 */
+body {
+  background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)),
+    url("https://images.unsplash.com/photo-1564518098559-98b6f8b9c7e1?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
 }
 
 /* 月光 */
@@ -13,24 +22,26 @@ body {
   background: radial-gradient(
     circle at 70% 20%,
     rgba(255,255,220,0.25),
-    rgba(0,0,0,0.7) 60%
+    rgba(0,0,0,0.85) 60%
   );
   pointer-events: none;
 }
 
-/* 入力エリア */
+/* 中央シーン */
 .scene {
+  position: relative;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding-bottom: 80px;
+  padding-bottom: 90px;
 }
 
+/* 竹の入力欄 */
 .bamboo-input {
-  width: 320px;
-  padding: 16px;
-  background: rgba(200, 220, 180, 0.85);
+  width: 340px;
+  padding: 14px;
+  background: rgba(180, 210, 160, 0.85);
   clip-path: polygon(
     0 0,
     92% 0,
@@ -47,20 +58,21 @@ body {
   background: transparent;
   border: none;
   outline: none;
+  box-sizing: border-box;
 }
 
 /* 浮かぶ文字 */
 .floating-text {
   position: absolute;
   left: 50%;
-  bottom: 160px;
+  bottom: 170px;
   transform: translateX(-50%);
-  color: rgba(255,255,240,0.9);
+  color: rgba(255,255,240,0.95);
   font-size: 20px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-shadow:
-    0 0 8px rgba(255,255,255,0.6),
-    0 0 16px rgba(255,255,255,0.3);
+    0 0 6px rgba(255,255,255,0.6),
+    0 0 14px rgba(255,255,255,0.4);
   animation: floatUp 4s ease-out forwards;
 }
 
