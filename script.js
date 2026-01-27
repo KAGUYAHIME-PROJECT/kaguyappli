@@ -1,21 +1,20 @@
-const responses = [
-  "かぐや姫は、月に帰ってしまいました。",
-  "1000年後、またお会いしましょう。",
-  "幸せって、何でしょうね。",
-  "人生って、何でしょうね。"
-];
+const input = document.getElementById("textInput");
 
-const gentleQuestion =
-  "忘れたふりをしている大切なことは、\nありませんか。";
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && input.value.trim() !== "") {
+    createFloatingText(input.value);
+    input.value = "";
+  }
+});
 
-const button = document.getElementById("ask");
-const output = document.getElementById("response");
+function createFloatingText(text) {
+  const el = document.createElement("div");
+  el.className = "floating-text";
+  el.textContent = text;
 
-button.addEventListener("click", () => {
-  output.textContent = gentleQuestion;
+  document.body.appendChild(el);
 
   setTimeout(() => {
-    const r = responses[Math.floor(Math.random() * responses.length)];
-    output.textContent = gentleQuestion + "\n\n" + r;
-  }, 1500);
-});
+    el.remove();
+  }, 4000);
+}
