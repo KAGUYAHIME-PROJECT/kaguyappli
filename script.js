@@ -6,7 +6,7 @@ const bamboo = document.querySelector(".bamboo-input");
 input.addEventListener("keydown", (e) => {
   if (e.key !== "Enter") appearText();
 
-  if (input.value.trim() === "") return;
+  if (input.value.trim() === "") appearText();
 
  
   bamboo.classList.add("fade-out");
