@@ -4,19 +4,23 @@ const input = document.getElementById("textInput");
 const bamboo = document.querySelector(".bamboo-input");
 
 input.addEventListener("keydown", (e) => {
-  if (e.key === "Enter" && input.value.trim() !== "") {
+  if (e.key !== "Enter") return;
 
-    // 竹を消す
-    bamboo.style.opacity = "0";
-    bamboo.style.pointerEvents = "none";
+  if (input.value.trim() === "") return;
 
-    // 浮かぶ文字生成
-    const text = document.createElement("div");
-    text.className = "floating-text";
-    text.textContent = input.value;
+  // ここから「確定処理」
+  bamboo.classList.add("fade-out");
 
-    document.body.appendChild(text);
+  const text = document.createElement("div");
+  text.className = "floating-text";
+  text.textContent = input.value;
 
-    input.value = "";
-  }
+  document.body.appendChild(text);
+
+  // 竹が消えた後に input を無効化
+  setTimeout(() => {
+    bamboo.style.display = "none";
+  }, 1200);
+
+  input.value = "";
 });
