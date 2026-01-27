@@ -6,7 +6,7 @@ body {
   font-family: "serif";
 }
 
-
+/* 月光 */
 .moonlight {
   position: fixed;
   inset: 0;
@@ -18,7 +18,7 @@ body {
   pointer-events: none;
 }
 
-
+/* 入力エリア */
 .scene {
   height: 100%;
   display: flex;
@@ -49,7 +49,7 @@ body {
   outline: none;
 }
 
-
+/* 浮かぶ文字 */
 .floating-text {
   position: absolute;
   left: 50%;
@@ -77,4 +77,3 @@ body {
     transform: translate(-50%, -120px);
   }
 }
-
