@@ -36,14 +36,16 @@ background-position: center top;
   margin-bottom: 40px;
 }
 
-.bamboo-input {
-  margin: 20px auto;
-  max-width: 400px;
-  transform: skew(-12deg);
-  background: linear-gradient(to right, #6b8e23, #8fbc8f);
-  padding: 8px;
-  overflow: hidden;
-}
+.bamboo-input textarea {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  outline: none;
+  transform: skew(12deg);
+  box-sizing: border-box;
+  font-size: 1rem;
+  resize: none;
+  background: rgba(255,255,255,0.85);
 
 }
 
@@ -53,7 +55,7 @@ background-position: center top;
  
   outline: none;
   transform: skew(12deg);
-　box-sizing: border-box; 
+  box-sizing: border-box; 
 }
 
 button {
