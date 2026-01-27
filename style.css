@@ -67,6 +67,9 @@ body {
   outline: none;
   box-sizing: border-box;
 }
+　.bamboo-input.fade-out {
+  opacity: 0;
+}
 
 /* 浮かぶ文字 */
 .scene {
