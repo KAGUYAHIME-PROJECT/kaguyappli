@@ -21,7 +21,8 @@ input.addEventListener("keydown", (e) => {
 
   if (input.value.trim() === "") appearText();
 
- 
+　if (typing) return;
+
   bamboo.classList.add("fade-out");
 
   const text = document.createElement("div");
