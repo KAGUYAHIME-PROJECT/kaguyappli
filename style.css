@@ -6,21 +6,17 @@ html, body {
   font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
 }
 
-
+/* 背景 */
 body {
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.15),
-      rgba(0,0,0,0.6)
-    );
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.7)
+  );
 }
 
-   
+/* 月光 */
 .moonlight {
-  background-image: url("moon.png");
-  background-size: cover;
-  background-position: center;
   position: fixed;
   inset: 0;
   z-index: 1;
@@ -28,36 +24,60 @@ body {
     circle at 70% 20%,
     rgba(255,255,230,0.35) 0%,
     rgba(255,255,230,0.15) 20%,
-    rgba(0,0,0,0.65) 60%
+    rgba(0,0,0,0.75) 60%
   );
   pointer-events: none;
 }
 
-
-
-.scene {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-    }
-
-  
+/* 竹藪（地上） */
 .bamboo-grove {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 40%;
+  z-index: 0;
   background: linear-gradient(
     to top,
     rgba(5,20,10,0.95),
     rgba(5,20,10,0.6),
     transparent
   );
-  z-index: 1;
 }
 
+/* シーン */
+.scene {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
 
+/* 竹の入力箱 */
+.bamboo-input {
+  position: absolute;
+  bottom: 90px;
+  left: 55%;
+  transform: translateX(-50%);
+  width: 260px;
+  padding: 18px 16px;
+
+  background: linear-gradient(
+    to right,
+    rgba(170,210,160,0.95),
+    rgba(210,240,200,0.95),
+    rgba(170,210,160,0.95)
+  );
+
+  border-radius: 6px;
+  box-shadow:
+    inset -6px 0 10px rgba(255,255,255,0.25),
+    inset 6px 0 10px rgba(0,0,0,0.15),
+    0 10px 25px rgba(0,0,0,0.4);
+
+  transition: opacity 1.2s ease;
+}
+
+/* 竹の節 */
 .bamboo-input::before,
 .bamboo-input::after {
   content: "";
@@ -71,45 +91,25 @@ body {
 .bamboo-input::before { top: 12px; }
 .bamboo-input::after  { bottom: 12px; }
 
-
-
-
-.bamboo-input {
-  position: absolute;
-  bottom: 80px;
-  left: 55%;
-  transform: translateX(-50%);
-  width: 260px;
-  padding: 18px 16px;
-
-  border-radius: 6px;
-  box-shadow:
-    inset -6px 0 10px rgba(255,255,255,0.25),
-    inset 6px 0 10px rgba(0,0,0,0.15),
-    0 10px 25px rgba(0,0,0,0.4);
-
-  transition: opacity 1.2s ease;
-}
-
-
+/* テキスト */
 .bamboo-input textarea {
   width: 100%;
   min-height: 60px;
-  font-size: 16px;
-  line-height: 1.6;
   background: transparent;
   border: none;
   outline: none;
   resize: none;
+  font-size: 16px;
+  line-height: 1.6;
   color: #1f2f1f;
 }
 
-
+/* フェード */
 .bamboo-input.fade-out {
   opacity: 0;
 }
 
-
+/* 浮かぶ文字 */
 .floating-text {
   position: absolute;
   left: 50%;
@@ -124,24 +124,26 @@ body {
   animation: floatUp 4s ease-out forwards;
 }
 
+/* 月リンク */
 .moon-link {
   position: fixed;
   right: 24px;
   bottom: 24px;
   font-size: 12px;
   opacity: 0.6;
+  z-index: 3;
 }
+
 .moon-link a {
   color: #eee;
   text-decoration: none;
 }
-.moon-link a:hover {
-  opacity: 1;
-}
+
 .hidden {
   display: none;
 }
 
+/* ボタン */
 #sendBtn {
   position: fixed;
   left: 50%;
@@ -155,15 +157,13 @@ body {
   cursor: pointer;
 }
 
-
+/* アニメーション */
 @keyframes floatUp {
   0% {
     opacity: 0;
     transform: translate(-50%, 20px);
   }
-  20% {
-    opacity: 1;
-  }
+  20% { opacity: 1; }
   100% {
     opacity: 0;
     transform: translate(-50%, -120px);
