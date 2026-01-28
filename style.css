@@ -58,8 +58,6 @@ body {
 }
 
 
-   }
-
 .bamboo-input::before,
 .bamboo-input::after {
   content: "";
@@ -74,13 +72,7 @@ body {
 .bamboo-input::after  { bottom: 12px; }
 
 
-.bamboo-input::before {
-  top: 12px;
-}
 
-.bamboo-input::after {
-  bottom: 12px;
-}
 
 .bamboo-input {
   position: absolute;
@@ -89,13 +81,6 @@ body {
   transform: translateX(-50%);
   width: 260px;
   padding: 18px 16px;
-
-  background: linear-gradient(
-    to right,
-    rgba(170,210,160,0.95),
-    rgba(210,240,200,0.95),
-    rgba(170,210,160,0.95)
-  );
 
   border-radius: 6px;
   box-shadow:
