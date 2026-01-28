@@ -3,30 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>KAGUYAHIME</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- 月の光 -->
   <div class="moonlight"></div>
+
+  <!-- 竹藪 -->
   <div class="bamboo-grove"></div>
 
+  <!-- 入力シーン -->
   <div class="scene">
     <div class="bamboo-input">
-      <textarea
-        id="textInput"
-        placeholder="忘れたふりをしている大切なことは、ありませんか。"
-      ></textarea>
+      <textarea placeholder="問いを書いてください"></textarea>
     </div>
-
-    <button id="sendBtn">問いかける</button>
   </div>
 
+  <!-- 月へ還るリンク -->
   <div id="moonLink" class="moon-link hidden">
     <a href="https://www.youtube.com/channel/UCz1DpsD0a2c-HXco2tweuBA" target="_blank">
       月へ還る
     </a>
   </div>
 
-  <script src="./script.js"></script>
+  <!-- ボタン -->
+  <button id="sendBtn">問いかける</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
