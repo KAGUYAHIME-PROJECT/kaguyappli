@@ -1,6 +1,9 @@
-console.log("生きてる？");
+console.log("KAGUYAHIME 起動");
 
+const input = document.getElementById("textInput");
+const bamboo = document.querySelector(".bamboo-input");
 
+// --- 返答データ ---
 const normalRepliesJP = [
   "かぐや姫は、月に帰ってしまいました。",
   "1000年後、またお会いしましょう。",
@@ -23,6 +26,7 @@ const coreWords = [
   "happiness"
 ];
 
+// --- 判定 ---
 function containsCoreWord(text) {
   return coreWords.some(word =>
     text.toLowerCase().includes(word.toLowerCase())
@@ -33,36 +37,39 @@ function randomFrom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+// --- 実行 ---
 function respond(text) {
   const isCore = containsCoreWord(text);
   const reply = isCore
     ? randomFrom(coreRepliesJP)
     : randomFrom(normalRepliesJP);
 
-  document.getElementById("response").innerText =
-    reply + "\n\n終了\n続きはない。\n説明もない。";
+  // 竹を消す
+  bamboo.classList.add("fade-out");
+
+  // 浮かぶ返答
+  const response = document.createElement("div");
+  response.className = "floating-text";
+  response.textContent =
+    reply + "　—　終了。続きはありません。";
+
+  document.body.appendChild(response);
+
+  setTimeout(() => {
+    response.remove();
+    bamboo.classList.remove("fade-out");
+    input.value = "";
+  }, 4000);
 }
 
+// --- Enter無効化 ---
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") e.preventDefault();
+});
+
+// --- ボタン or 外部呼び出し用 ---
 function submitQuestion() {
-  const text = document.getElementById("questionInput").value;
+  const text = input.value.trim();
+  if (text === "") return;
   respond(text);
 }
-
-function askPreset(index) {
-  const presets = [
-    "KAGUYAHIME PROJECTって何ですか？",
-    "あなたは何をしたんですか？"
-  ];
-  respond(presets[index]);
-}
-
-console.log("DOMチェック", {
-  input: document.getElementById("textInput"),
-  button: document.getElementById("sendBtn")
-    
-input.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault(); // ← これが核心
-    return;
-  }
-});
