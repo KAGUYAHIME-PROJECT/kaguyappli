@@ -8,6 +8,8 @@ button.addEventListener("click", () => {
   const value = input.value.trim();
   if (value === "") return;
 
+  console.log("問い:", value);
+
   bamboo.classList.add("fade-out");
 
   const text = document.createElement("div");
