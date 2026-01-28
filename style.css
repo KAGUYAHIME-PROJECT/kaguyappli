@@ -138,6 +138,24 @@ body {
   animation: floatUp 4s ease-out forwards;
 }
 
+.moon-link {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+.moon-link a {
+  color: #eee;
+  text-decoration: none;
+}
+.moon-link a:hover {
+  opacity: 1;
+}
+.hidden {
+  display: none;
+}
+
 
 @keyframes floatUp {
   0% {
