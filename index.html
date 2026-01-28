@@ -2,27 +2,39 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>KAGUYAHIME PROJECT</title>
+  <title>KAGUYAHIME</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<h2>昔々の物語</h2>
+  <!-- 月の光 -->
+  <div class="moonlight"></div>
 
-<p>質問を入力させる</p>
+  <!-- 竹藪 -->
+  <div class="bamboo-grove"></div>
 
-<input id="questionInput" />
+  <!-- 物語 -->
+  <div class="scene">
 
-<button onclick="askPreset(0)">
-  KAGUYAHIME PROJECTって何ですか？
-</button>
-<button onclick="askPreset(1)">
-  あなたは何をしたんですか？
-</button>
-<button onclick="submitQuestion()">問いかける</button>
-<button id="sendBtn" type="button">問いかける</button>
+    <div class="opening">
+      昔々の物語
+    </div>
 
-<div id="response"></div>
+    <div class="bamboo-input">
+      <textarea
+        id="textInput"
+        placeholder="忘れたふりをしている大切なことは、ありませんか。"
+      ></textarea>
+    </div>
 
-<script src="script.js"></script>
+  </div>
+
+  <!-- 実行ボタン -->
+  <button id="sendBtn" type="button">問いかける</button>
+
+  <!-- JSは必ず最後 -->
+  <script src="./script.js"></script>
 </body>
 </html>
