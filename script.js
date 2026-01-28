@@ -17,7 +17,9 @@ button.addEventListener("click", () => {
   text.textContent = value;
 
   document.body.appendChild(text);
+　document.getElementById("moonLink").classList.remove("hidden");
 
+  
   setTimeout(() => {
     bamboo.style.display = "none";
   }, 1200);
