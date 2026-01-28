@@ -2,33 +2,17 @@ console.log("KAGUYAHIME 起動");
 
 const input = document.getElementById("textInput");
 const bamboo = document.querySelector(".bamboo-input");
+const button = document.getElementById("sendBtn");
 
-let typing = false;
+button.addEventListener("click", () => {
+  const value = input.value.trim();
+  if (value === "") return;
 
-input.addEventListener("focus", () => {
-  typing = true;
-});
-
-input.addEventListener("blur", () => {
-  typing = false;
-});
-
-input.addEventListener("keydown", (e) => {
-  // 🌙 Enter以外は何もしない
-  if (e.key !== "Enter") return;
-
-  // 🌱 空なら何もしない
-  if (input.value.trim() === "") return;
-
-  // 🎋 入力中なら何もしない
-  if (typing) return;
-
-  // ここから「物語」
   bamboo.classList.add("fade-out");
 
   const text = document.createElement("div");
   text.className = "floating-text";
-  text.textContent = input.value;
+  text.textContent = value;
 
   document.body.appendChild(text);
 
