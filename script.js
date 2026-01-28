@@ -40,9 +40,17 @@ function randomFrom(arr) {
 // --- 実行 ---
 function respond(text) {
   const isCore = containsCoreWord(text);
-  const reply = isCore
-    ? randomFrom(coreRepliesJP)
-    : randomFrom(normalRepliesJP);
+
+  if (isCore) {
+    const reply = randomFrom(coreReplies);
+    document.getElementById("response").innerText =
+      reply + "\n\nー終了します";
+  } else {
+    const reply = randomFrom(quietReplies);
+    document.getElementById("response").innerText = reply;
+  }
+}
+
 
   // 竹を消す
   bamboo.classList.add("fade-out");
