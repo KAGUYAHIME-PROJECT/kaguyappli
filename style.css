@@ -17,8 +17,9 @@ body {
 
 
 .moonlight {
-  z-index: 1;
+  position: fixed;
   inset: 0;
+  z-index: 1;
   background: radial-gradient(
     circle at 70% 20%,
     rgba(255,255,220,0.25),
@@ -27,10 +28,17 @@ body {
   pointer-events: none;
 }
 
+
 .scene {
   position: relative;
   z-index: 2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 90px;
 }
+
 
 
 .scene {
@@ -59,21 +67,23 @@ body {
   transition: opacity 1.2s ease;
 }
 
-.bamboo-input input {
+.bamboo-input textarea {
   width: 100%;
   font-size: 16px;
   background: transparent;
   border: none;
   outline: none;
+  resize: none;
   box-sizing: border-box;
 }
+
 　.bamboo-input.fade-out {
   opacity: 0;
 }
 
 
-.scene {
-  position: relative;
+.floating-text {
+  position: absolute;
   left: 50%;
   bottom: 170px;
   transform: translateX(-50%);
@@ -85,6 +95,7 @@ body {
     0 0 14px rgba(255,255,255,0.4);
   animation: floatUp 4s ease-out forwards;
 }
+
 
 @keyframes floatUp {
   0% {
