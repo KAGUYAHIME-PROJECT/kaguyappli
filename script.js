@@ -1,28 +1,27 @@
-console.log("KAGUYAHIME 起動");
+const btn = document.getElementById("sendBtn");
+const textarea = document.querySelector("textarea");
+const inputBox = document.querySelector(".bamboo-input");
+const moonLink = document.getElementById("moonLink");
 
-const input = document.getElementById("textInput");
-const bamboo = document.querySelector(".bamboo-input");
-const button = document.getElementById("sendBtn");
+btn.addEventListener("click", () => {
+  const text = textarea.value.trim();
+  if (!text) return;
 
-button.addEventListener("click", () => {
-  const value = input.value.trim();
-  if (value === "") return;
+  const floating = document.createElement("div");
+  floating.className = "floating-text";
+  floating.textContent = text;
 
-  console.log("問い:", value);
+  document.body.appendChild(floating);
 
-  bamboo.classList.add("fade-out");
+  textarea.value = "";
+  inputBox.classList.add("fade-out");
 
-  const text = document.createElement("div");
-  text.className = "floating-text";
-  text.textContent = value;
-
-  document.body.appendChild(text);
-　document.getElementById("moonLink").classList.remove("hidden");
-
-  
   setTimeout(() => {
-    bamboo.style.display = "none";
-  }, 1200);
+    inputBox.classList.remove("fade-out");
+    moonLink.classList.remove("hidden");
+  }, 4000);
 
-  input.value = "";
+  setTimeout(() => {
+    floating.remove();
+  }, 4200);
 });
