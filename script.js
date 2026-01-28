@@ -5,8 +5,6 @@ const bamboo = document.querySelector(".bamboo-input");
 
 let typing = false;
 
-const input = document.getElementById("textInput");
-
 input.addEventListener("focus", () => {
   typing = true;
 });
@@ -15,14 +13,17 @@ input.addEventListener("blur", () => {
   typing = false;
 });
 
-
 input.addEventListener("keydown", (e) => {
-  if (e.key !== "Enter") appearText();
+  // 🌙 Enter以外は何もしない
+  if (e.key !== "Enter") return;
 
-  if (input.value.trim() === "") appearText();
+  // 🌱 空なら何もしない
+  if (input.value.trim() === "") return;
 
-　if (typing) return;
+  // 🎋 入力中なら何もしない
+  if (typing) return;
 
+  // ここから「物語」
   bamboo.classList.add("fade-out");
 
   const text = document.createElement("div");
@@ -31,7 +32,6 @@ input.addEventListener("keydown", (e) => {
 
   document.body.appendChild(text);
 
- 
   setTimeout(() => {
     bamboo.style.display = "none";
   }, 1200);
