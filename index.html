@@ -2,34 +2,26 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>KAGUYAHIME</title>
-  <link rel="stylesheet" href="style.css">
+  <title>KAGUYAHIME PROJECT</title>
 </head>
 <body>
 
-  <!-- 月の光 -->
-  <div class="moonlight"></div>
+<h2>昔々の物語</h2>
 
-  <!-- 竹藪 -->
-  <div class="bamboo-grove"></div>
+<p>質問を入力させる</p>
 
-  <!-- 入力シーン -->
-  <div class="scene">
-    <div class="bamboo-input">
-      <textarea placeholder="問いを書いてください"></textarea>
-    </div>
-  </div>
+<input id="questionInput" />
 
-  <!-- 月へ還るリンク -->
-  <div id="moonLink" class="moon-link hidden">
-    <a href="https://www.youtube.com/channel/UCz1DpsD0a2c-HXco2tweuBA" target="_blank">
-      月へ還る
-    </a>
-  </div>
+<button onclick="askPreset(0)">
+  KAGUYAHIME PROJECTって何ですか？
+</button>
+<button onclick="askPreset(1)">
+  あなたは何をしたんですか？
+</button>
+<button onclick="submitQuestion()">問いかける</button>
 
-  <!-- ボタン -->
-  <button id="sendBtn">問いかける</button>
+<div id="response"></div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
