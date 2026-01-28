@@ -45,8 +45,8 @@ body {
   position: absolute;
 
   /* 月(70%,20%) → 斜め下へ */
-  left: 62%;
-  top: 38%;
+  left: 58%;
+  top: 60%;
 
   transform: translate(-50%, -50%);
 
