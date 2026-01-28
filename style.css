@@ -56,11 +56,12 @@ body {
       rgba(5,25,12,0.9) 14px,
       rgba(5,25,12,0.9) 28px
      );
-  mask-image: linear-gradient(
-    to top,
-    black 70%,
-    transparent 100%
-    );
+ -webkit-mask-image: linear-gradient(
+  to top,
+  black 70%,
+  transparent 100%
+);
+
    }
 
  .bamboo-input::before,
