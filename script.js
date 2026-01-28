@@ -59,4 +59,10 @@ function askPreset(index) {
 console.log("DOMチェック", {
   input: document.getElementById("textInput"),
   button: document.getElementById("sendBtn")
+    
+input.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault(); // ← これが核心
+    return;
+  }
 });
