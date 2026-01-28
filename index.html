@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>KAGUYAHIME</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="./style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css" />
 </head>
+
 <body>
 
-  <!-- 月の光 -->
+  <!-- 月光 -->
   <div class="moonlight"></div>
 
-  <!-- 竹藪 -->
+  <!-- 竹藪シルエット -->
   <div class="bamboo-grove"></div>
 
-  <!-- 物語 -->
+  <!-- シーン -->
   <div class="scene">
-
-    <div class="opening">
-      昔々の物語
-    </div>
-
     <div class="bamboo-input">
       <textarea
         id="textInput"
         placeholder="忘れたふりをしている大切なことは、ありませんか。"
       ></textarea>
     </div>
-
   </div>
 
   <!-- 実行ボタン -->
-  <button id="sendBtn" type="button">問いかける</button>
+  <button id="sendBtn" onclick="submitQuestion()">
+    問いかける
+  </button>
 
-  <!-- JSは必ず最後 -->
+  <!-- JS -->
   <script src="./script.js"></script>
+
 </body>
 </html>
