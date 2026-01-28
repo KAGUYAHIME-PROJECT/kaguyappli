@@ -1,38 +1,114 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>KAGUYAHIME</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: serif;
+      text-align: center;
+      padding: 40px;
+    }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="./style.css" />
+    button {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #666;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      background: #111;
+      color: #fff;
+      border: 1px solid #666;
+    }
+
+    #response {
+      margin-top: 30px;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
-
 <body>
 
-  <!-- 月光 -->
-  <div class="moonlight"></div>
+  <h1>KAGUYAHIME</h1>
 
-  <!-- 竹藪シルエット -->
-  <div class="bamboo-grove"></div>
+  <input id="questionInput" placeholder="問いをどうぞ">
+  <br><br>
+  <button onclick="submitQuestion()">問う</button>
 
-  <!-- シーン -->
-  <div class="scene">
-    <div class="bamboo-input">
-      <textarea
-        id="textInput"
-        placeholder="大切な事はありませんか"
-      ></textarea>
-    </div>
+  <div>
+    <button onclick="askPreset(0)">KAGUYAHIME PROJECTとは</button>
+    <button onclick="askPreset(1)">あなたは何をしたのですか</button>
   </div>
 
-  <!-- 実行ボタン -->
-  <button id="sendBtn" onclick="submitQuestion()">
-    問いかける
-  </button>
+  <div id="response"></div>
 
-  <!-- JS -->
-  <script src="./script.js"></script>
+  <script>
+    const quietReplies = [
+      "かぐや姫は月に帰ってしまいました",
+      "1000年後またお会いしましょう",
+      "幸せとは何でしょうね",
+      "人生とは何でしょうね"
+    ];
+
+    const coreReplies = [
+      "そう思うのですね",
+      "そう感じているのですね"
+    ];
+
+    const coreWords = [
+      "幸せ",
+      "人生",
+      "意味",
+      "生きる",
+      "why",
+      "life",
+      "happiness"
+    ];
+
+    function containsCoreWord(text) {
+      return coreWords.some(word =>
+        text.toLowerCase().includes(word.toLowerCase())
+      );
+    }
+
+    function randomFrom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function respond(text) {
+      const isCore = containsCoreWord(text);
+      const reply = isCore
+        ? randomFrom(coreReplies)
+        : randomFrom(quietReplies);
+
+      // quietReplies の場合は 終了文を出さない
+      const isQuiet = quietReplies.includes(reply);
+
+      document.getElementById("response").innerText =
+        isQuiet ? reply : reply + "\n\nー終了します";
+    }
+
+    function submitQuestion() {
+      const text = document.getElementById("questionInput").value;
+      respond(text);
+    }
+
+    function askPreset(index) {
+      const presets = [
+        "KAGUYAHIME PROJECTとは何ですか",
+        "あなたは何をしたのですか"
+      ];
+      respond(presets[index]);
+    }
+  </script>
 
 </body>
 </html>
