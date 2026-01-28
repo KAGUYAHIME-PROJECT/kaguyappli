@@ -52,3 +52,8 @@ function askPreset(index) {
   ];
   respond(presets[index]);
 }
+
+console.log("DOMチェック", {
+  input: document.getElementById("textInput"),
+  button: document.getElementById("sendBtn")
+});
