@@ -51,7 +51,7 @@ function respond(text) {
   const response = document.createElement("div");
   response.className = "floating-text";
   response.textContent =
-    reply + "　—　終了。続きはありません。";
+    reply + "　—　終了します";
 
   document.body.appendChild(response);
 
