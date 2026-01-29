@@ -52,7 +52,7 @@ function submitQuestion() {
 function askPreset(index) {
   const presets = [
     "KAGUYAHIME PROJECTって何ですか",
-    "あなたは何をしたんですか"
+    "KAGUYAHIME PROJECTは何をしたんですか"
   ];
   respond(presets[index]);
 }
