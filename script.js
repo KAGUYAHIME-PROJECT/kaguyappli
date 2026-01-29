@@ -37,7 +37,7 @@ function respond(text) {
   if (isCore) {
     reply = randomFrom(coreReplies);
     document.getElementById("response").innerText =
-      reply + "\n\nーさようなら";
+      reply + "\n\nーお・し・ま・い";
   } else {
     reply = randomFrom(quietReplies);
     document.getElementById("response").innerText = reply;
