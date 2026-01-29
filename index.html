@@ -93,7 +93,7 @@
       const isQuiet = quietReplies.includes(reply);
 
       document.getElementById("response").innerText =
-        isQuiet ? reply : reply + "\n\nー終了します";
+        isQuiet ? reply : reply + "\n\nーさようなら";
     }
 
     function submitQuestion() {
@@ -104,7 +104,7 @@
     function askPreset(index) {
       const presets = [
         "KAGUYAHIME PROJECTとは何ですか",
-        "あなたは何をしたのですか"
+        "KAGUYAHIME PROJECTは何をしたのですか"
       ];
       respond(presets[index]);
     }
